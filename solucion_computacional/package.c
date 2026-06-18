@@ -8,6 +8,9 @@ void printPackage(Package p) {
     printf("Priority: %d\n", p.priority);
     printf("Status: ");
     switch (p.status) {
+        default:
+            printf("Unknown\n");
+            break;
         case REGISTERED:
             printf("Registered\n");
             break;
