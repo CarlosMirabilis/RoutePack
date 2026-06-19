@@ -12,7 +12,7 @@ typedef struct {
 } DeliveryQueue;
 void initQueue(DeliveryQueue* queue);
 int enqueue(DeliveryQueue* queue, Package p);
-Package dequeue(DeliveryQueue* queue);
+int dequeue(DeliveryQueue* queue, Package* result);
 QueueNode* peekQueue(DeliveryQueue* queue);
 void displayQueue(DeliveryQueue* queue);
 int isQueueEmpty(DeliveryQueue* queue);

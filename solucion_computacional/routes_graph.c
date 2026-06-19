@@ -5,7 +5,7 @@ void initGraph(RoutesGraph* graph) {
     graph->vertexCount = 0;
     for (int i = 0; i < MAX_VERTICES; i++) {
         for (int j = 0; j < MAX_VERTICES; j++) {
-            graph->adjMatrix[i][j] = INF;
+            graph->adjMatrix[i][j] = (i == j) ? 0 : INF;
         }
     }
 }
@@ -61,7 +61,7 @@ void dijkstra(RoutesGraph* graph, char* origin, char* destination) {
     int originIndex = findVertex(graph, origin);
     int destinationIndex = findVertex(graph, destination);
     if (originIndex == -1 || destinationIndex == -1) {
-        printf("Origin or destination vertex not found.\n");
+        printf("Punto de origen o destino no encontrado.\n");
         return;
     }
     for (int i = 0; i < graph->vertexCount; i++) {
@@ -69,7 +69,7 @@ void dijkstra(RoutesGraph* graph, char* origin, char* destination) {
         visited[i] = 0;
         prev[i] = -1;
     }
-   graph->adjMatrix[i][j] = (i == j) ? 0 : INF;
+    dist[originIndex] = 0;
     for (int i = 0; i < graph->vertexCount; i++) {
         int minDist = INF;
         int minIndex = -1;
@@ -94,7 +94,7 @@ void dijkstra(RoutesGraph* graph, char* origin, char* destination) {
         }
     }
     if (dist[destinationIndex] == INF) {
-        printf("No path from %s to %s.\n", origin, destination);
+        printf("No existe ruta entre %s y %s.\n", origin, destination);
         return;
     }
     int path[MAX_VERTICES];
@@ -104,9 +104,13 @@ void dijkstra(RoutesGraph* graph, char* origin, char* destination) {
         path[pathIndex++] = current;
         current = prev[current];
     }
-    printf("Shortest path from %s to %s: ", origin, destination);
+    printf("Ruta mas corta: ");
     for (int i = pathIndex - 1; i >= 0; i--) {
-        printf("%s ", graph->names[path[i]]);
+        printf("%s", graph->names[path[i]]);
+        if (i > 0) {
+            printf(" -> ");
+        }
     }
     printf("\n");
+    printf("Distancia total: %d\n km\n", dist[destinationIndex]);
 }

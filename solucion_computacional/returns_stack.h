@@ -11,7 +11,7 @@ typedef struct {
     int size;
 } ReturnsStack;
 void initStack(ReturnsStack* stack);
-int isStackEmpty(ReturnsStack* stack, Package p);
+int push(ReturnsStack* stack, Package p);
 int pop(ReturnsStack* stack, Package* result);
 StackNode* peekStack(ReturnsStack* stack);
 void displayStack(ReturnsStack* stack);
