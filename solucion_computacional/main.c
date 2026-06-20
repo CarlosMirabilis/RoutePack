@@ -94,8 +94,8 @@ int main() {
                                 printf("Error: El cliente ya existe o no se pudo insertar.\n");
                             }
                         }
-                            break;
-                         case 2: {
+                             break;
+                        case 2: {
                             char searchId[10];
                             printf("Ingrese el ID del cliente a buscar: ");
                             readLine(searchId, sizeof(searchId));
