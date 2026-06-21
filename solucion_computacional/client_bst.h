@@ -2,7 +2,7 @@
 #define CLIENT_BST_H
 #include "stdio.h"
 typedef struct {
-    char id[10];
+    char id[15];
     char fullName[50];
     char phone[15];
     char email[50];

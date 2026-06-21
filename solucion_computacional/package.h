@@ -10,7 +10,7 @@ typedef enum {
 } PackageStatus;
 typedef struct {
     char code[10];
-    char clientId[10];
+    char clientId[15];
     char recipientName[50];
     char destination[50];
     float weight;

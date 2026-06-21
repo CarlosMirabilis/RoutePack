@@ -15,7 +15,13 @@
 
 void readLine(char* buffer, int size) {
     fgets(buffer, size, stdin);
-    buffer[strcspn(buffer, "\n")] = '\0'; // Remove newline character
+    char* newlinePos = strchr(buffer, '\n');
+    if (newlinePos) {
+        *newlinePos = '\0';
+    } else {
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF); // descartar el resto de la linea
+    }
 }
 
 int main() {
@@ -96,7 +102,7 @@ int main() {
                         }
                              break;
                         case 2: {
-                            char searchId[10];
+                            char searchId[15];
                             printf("Ingrese el ID del cliente a buscar: ");
                             readLine(searchId, sizeof(searchId));
                             ClientNode* foundClient = searchClient(&clientBST, searchId);
@@ -161,8 +167,11 @@ int main() {
                         printf("Ingrese el peso del paquete: ");
                         scanf("%f", &newPackage.weight);
                         while ((c = getchar()) != '\n' && c != EOF);
-                        printf("Ingrese la prioridad del paquete: ");        
-                        scanf("%d", &newPackage.priority);                   
+                        printf("Ingrese la prioridad del paquete (numero entero, ej. 1=baja, 5=alta): ");
+                        while (scanf("%d", &newPackage.priority) != 1) {
+                            while ((c = getchar()) != '\n' && c != EOF);
+                            printf("Entrada invalida. Ingrese la prioridad como numero entero: ");
+                        }
                         while ((c = getchar()) != '\n' && c != EOF);         
                         newPackage.status = REGISTERED;
                         if (insertPackage(&packageList, newPackage)) {
