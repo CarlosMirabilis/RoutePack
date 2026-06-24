@@ -137,3 +137,10 @@ void loadGraph(RoutesGraph* graph, char* filename) {
     }
     fclose(file);
 }
+
+/*
+ * Descripcion: Implementa el guardado y carga en disco de clientes, paquetes y el grafo de rutas.
+ * Entradas: Punteros a las estructuras correspondientes y el nombre del archivo como char*.
+ * Salidas: Ninguna; escribe en disco o imprime un mensaje de error si el archivo no puede abrirse.
+ * Restricciones: Los archivos de carga deben tener el mismo formato que producen las funciones de guardado.
+ */

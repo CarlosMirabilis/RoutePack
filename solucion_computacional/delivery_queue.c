@@ -50,3 +50,10 @@ void displayQueue(DeliveryQueue* queue) {
 int isQueueEmpty(DeliveryQueue* queue) {
     return queue->size == 0;
 }
+
+/*
+ * Descripcion: Implementa la cola FIFO de entregas de paquetes.
+ * Entradas: Punteros a DeliveryQueue y estructuras Package segun la funcion.
+ * Salidas: Enteros de exito/fallo, punteros a QueueNode, o impresion en consola segun la funcion.
+ * Restricciones: La cola debe inicializarse con initQueue() antes de usarse.
+ */

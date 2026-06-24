@@ -17,3 +17,10 @@ QueueNode* peekQueue(DeliveryQueue* queue);
 void displayQueue(DeliveryQueue* queue);
 int isQueueEmpty(DeliveryQueue* queue);
 #endif
+
+/*
+ * Descripcion: Define las estructuras QueueNode y DeliveryQueue, y declara las funciones de gestion de la cola de entregas.
+ * Entradas: Punteros a DeliveryQueue y estructuras Package segun la funcion.
+ * Salidas: Enteros de exito/fallo o punteros a QueueNode segun la funcion.
+ * Restricciones: Depende de package.h. Debe incluirse antes de usar cualquier funcion del modulo delivery_queue.c.
+ */

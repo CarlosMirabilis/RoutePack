@@ -114,3 +114,10 @@ int insertAVL(PackageAVL* avl, Package p) {
     avl->root = insertAVLNode(avl->root, p);
     return 1; // Success
 }
+
+/*
+ * Descripcion: Implementa el arbol AVL de paquetes, manteniendolos ordenados por codigo con rebalanceo automatico.
+ * Entradas: Punteros a PackageAVL o AVLNode y estructuras Package o codigos char* segun la funcion.
+ * Salidas: Enteros de exito/fallo, punteros a AVLNode, o impresion en consola segun la funcion.
+ * Restricciones: No permite codigos duplicados. El arbol debe inicializarse con initAVL() antes de usarse.
+ */

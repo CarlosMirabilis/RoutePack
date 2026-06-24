@@ -15,3 +15,10 @@ int insertAVL(PackageAVL* avl, Package p);
 AVLNode* searchAVL(PackageAVL* avl, char* code);
 void inorderAVL(AVLNode* node);
 #endif
+
+/*
+ * Descripcion: Define las estructuras AVLNode y PackageAVL, y declara las funciones de gestion del arbol AVL de paquetes.
+ * Entradas: Punteros a PackageAVL o AVLNode, estructuras Package y cadenas char* segun la funcion.
+ * Salidas: Enteros de exito/fallo o punteros a AVLNode segun la funcion.
+ * Restricciones: Depende de package.h. Debe incluirse antes de usar cualquier funcion del modulo package_avl.c.
+ */

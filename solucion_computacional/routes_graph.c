@@ -114,3 +114,10 @@ void dijkstra(RoutesGraph* graph, char* origin, char* destination) {
     printf("\n");
     printf("Distancia total: %d\n km\n", dist[destinationIndex]);
 }
+
+/*
+ * Descripcion: Implementa el grafo de rutas mediante matriz de adyacencia, incluyendo el algoritmo de Dijkstra.
+ * Entradas: Punteros a RoutesGraph, nombres de puntos char* y pesos enteros segun la funcion.
+ * Salidas: Enteros de exito/fallo o impresion en consola segun la funcion.
+ * Restricciones: El grafo debe inicializarse con initGraph() antes de usarse. Dijkstra requiere que origen y destino existan en el grafo.
+ */

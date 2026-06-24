@@ -40,3 +40,10 @@ void displayStack(ReturnsStack* stack) {
         current = current->next;
     }
 }
+
+/*
+ * Descripcion: Implementa la pila LIFO de paquetes devueltos.
+ * Entradas: Punteros a ReturnsStack y estructuras Package segun la funcion.
+ * Salidas: Enteros de exito/fallo, punteros a StackNode, o impresion en consola segun la funcion.
+ * Restricciones: La pila debe inicializarse con initStack() antes de usarse.
+ */

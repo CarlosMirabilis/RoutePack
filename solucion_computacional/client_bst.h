@@ -24,3 +24,10 @@ void preorder (ClientNode* node);
 void postorder (ClientNode* node);
 int clientExists(ClientBST* bst, char* id);
 #endif
+
+/*
+ * Descripcion: Define las estructuras Client, ClientNode y ClientBST, y declara las funciones de gestion del arbol BST de clientes.
+ * Entradas: Punteros a ClientBST, estructuras Client y cadenas char* segun la funcion.
+ * Salidas: Enteros de exito/fallo o punteros a ClientNode segun la funcion.
+ * Restricciones: Requiere stdio.h. Debe incluirse antes de usar cualquier funcion del modulo client_bst.c.
+ */

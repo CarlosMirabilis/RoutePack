@@ -78,3 +78,10 @@ int countByStatus(PackageList* list, PackageStatus status) {
     
     return count;
 }
+
+/*
+ * Descripcion: Implementa la lista enlazada simple para el registro y gestion de paquetes.
+ * Entradas: Punteros a PackageList, estructuras Package, codigos char* y valores PackageStatus segun la funcion.
+ * Salidas: Enteros de exito/fallo, punteros a PackageNode, o impresion en consola segun la funcion.
+ * Restricciones: No permite codigos duplicados. La lista debe inicializarse con initList() antes de usarse.
+ */

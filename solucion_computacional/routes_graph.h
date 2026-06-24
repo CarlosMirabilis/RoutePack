@@ -16,3 +16,10 @@ void displayVertices(RoutesGraph* graph);
 void displayMatrix(RoutesGraph* graph);
 void dijkstra(RoutesGraph* graph, char* origin, char* destination);
 #endif
+
+/*
+ * Descripcion: Define la estructura RoutesGraph con su matriz de adyacencia, las constantes MAX_VERTICES e INF, y declara las funciones de gestion del grafo y del algoritmo de Dijkstra.
+ * Entradas: Punteros a RoutesGraph, nombres de puntos char* y pesos enteros segun la funcion.
+ * Salidas: Enteros de exito/fallo o impresion en consola segun la funcion.
+ * Restricciones: Requiere stdio.h. El grafo soporta un maximo de MAX_VERTICES vertices y representa distancias ausentes con el valor INF.
+ */

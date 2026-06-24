@@ -78,3 +78,10 @@ void postorder(ClientNode* node) {
 int clientExists(ClientBST* bst, char* id) {
     return searchClient(bst, id) != NULL;
 }
+
+/*
+ * Descripcion: Implementa el arbol binario de busqueda de clientes usando su ID como llave.
+ * Entradas: Punteros a ClientBST y datos de tipo Client o char* segun la funcion.
+ * Salidas: Enteros de exito/fallo, punteros a ClientNode, o impresion en consola segun la funcion.
+ * Restricciones: No permite IDs duplicados. El arbol debe inicializarse con initBST() antes de usarse.
+ */

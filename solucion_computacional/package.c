@@ -28,3 +28,10 @@ void printPackage(Package p) {
             break;
     }
 }
+
+/*
+ * Descripcion: Implementa la impresion en consola de todos los campos de un paquete.
+ * Entradas: Una estructura Package recibida por valor.
+ * Salidas: Impresion directa en consola; no retorna ningun valor.
+ * Restricciones: Si el campo status contiene un valor fuera del enum PackageStatus, imprime "Unknown".
+ */

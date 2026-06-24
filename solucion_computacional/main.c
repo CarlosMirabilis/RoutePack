@@ -8,7 +8,7 @@
 #include "routes_graph.h"
 #include "files.h"
 #include "string.h"
-
+#include <stdlib.h>
 #define CLIENTS_FILE "clients.txt"
 #define PACKAGES_FILE "packages.txt"
 #define GRAPH_FILE "graph.txt"
@@ -167,12 +167,21 @@ int main() {
                         printf("Ingrese el peso del paquete: ");
                         scanf("%f", &newPackage.weight);
                         while ((c = getchar()) != '\n' && c != EOF);
-                        printf("Ingrese la prioridad del paquete (numero entero, ej. 1=baja, 5=alta): ");
-                        while (scanf("%d", &newPackage.priority) != 1) {
-                            while ((c = getchar()) != '\n' && c != EOF);
-                            printf("Entrada invalida. Ingrese la prioridad como numero entero: ");
-                        }
-                        while ((c = getchar()) != '\n' && c != EOF);         
+                        int priorityValid = 0;
+                        long priorityValue = 0;
+                        char priorityInput[20];
+                        do {
+                            printf("Ingrese la prioridad del paquete (1=muy baja, 2=baja, 3=normal, 4=alta, 5=muy alta): ");
+                            readLine(priorityInput, sizeof(priorityInput));
+                            char* endPtr;
+                            priorityValue = strtol(priorityInput, &endPtr, 10);
+                            if (endPtr != priorityInput && *endPtr == '\0' && priorityValue >= 1 && priorityValue <= 5) {
+                                priorityValid = 1;
+                            } else {
+                                printf("Entrada invalida. Debe ser un numero entero entre 1 y 5, sin decimales.\n");
+                            }
+                        } while (!priorityValid);
+                        newPackage.priority = (int)priorityValue;
                         newPackage.status = REGISTERED;
                         if (insertPackage(&packageList, newPackage)) {
                             insertAVL(&packageAVL, newPackage);
@@ -516,3 +525,10 @@ int main() {
 
     return 0;
 }
+
+/*
+ * Descripcion: Punto de entrada del programa; inicializa estructuras, carga datos persistidos, gestiona el menu principal y guarda los datos al salir.
+ * Entradas: Selecciones numericas del usuario por teclado y texto ingresado en cada operacion.
+ * Salidas: Impresion de menus y resultados en consola; archivos actualizados en disco al salir.
+ * Restricciones: Depende de que los seis modulos del sistema esten correctamente inicializados antes de operar.
+ */
